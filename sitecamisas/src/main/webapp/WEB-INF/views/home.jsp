@@ -16,38 +16,34 @@
 		</div>
 		<div class="row">
 			<div class="col-6">
-				<div class="img_texto">
-					<a href="#"> 
-							Liquida Verão <span>Todas as peças com até 60% OFF</span>
-					</a>
-					<img src="${imagem}slide01.jpg"	alt="Liquida" />
-				</div>
+				<a href="#">
+					<div id="teste" class="img_texto">
+						Liquida Verão <span>Todas as peças com até 60% OFF</span>
+					</div>
+				</a>
 				<div class="row caixa_imgs">
 					<div class="col-6">
-						<div class="img_texto">
-							<a href="${s:mvcUrl('HC#feminino').build()}"> 
-								Para Ela
-							</a>
-							<img class="img_menu" src="${imagem}asset1.jpeg" alt="Liquida" />
+						<a href="#">
+						<div id="teste3" >
+							Para Ela
 						</div>
+					</a>
 					</div>
 					<div class="col-6">
-						<div class="img_texto">
-							<a href="${s:mvcUrl('HC#masculino').build()}"> 
-								Para Ele
-							</a>
-							<img class="img_menu" src="${imagem}asset2.jpeg" alt="Liquida" />
+						<a href="#">
+						<div id="teste4" class="img_texto">
+							Para Ele
 						</div>
+					</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-6">
-				<div class="img_texto">
-					<a href="#"> 
-						Outono Inverno 2018
+					<a href="#">
+						<div id="teste2" class="img_texto">
+							Outono Inverno 2018
+						</div>
 					</a>
-					<img src="${imagem}slide02.jpg"	alt="Coleção Outono">
-				</div>
 			</div>
 		</div>
 		<h4 class="titulo titulo_bloco">Produtos em destaque</h4>

@@ -45,14 +45,75 @@ body {
 	font-size: 35px;
 }
 
+#teste {
+	width: 100%;
+	min-height: 50%;
+	background-image: url('../img/slide01.jpg');
+	text-align: center;
+	line-height: 1em;
+	background-size: cover;
+	padding-top: 25%;
+	text-shadow: 2px 2px 20px #000;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#teste2 {
+	width: 100%;
+	height: auto;
+	background-image: url('../img/slide02.jpg');
+	text-align: center;
+	line-height: 1em;
+	background-size: cover;
+	padding-top: 50%;
+	padding-bottom: 50%;
+	text-shadow: 2px 2px 20px #000;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#teste3 {
+	width: 100%;
+	min-height: 100%;
+	background-image: url('../img/asset1.jpeg');
+	text-align: center;
+	line-height: 1em;
+	background-size: cover;
+	padding-top: 50%;
+	padding-bottom: 50%;
+	text-shadow: 2px 2px 20px #000;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#teste4 {
+	width: 100%;
+	min-height: 100%;
+	background-image: url('../img/asset2.jpeg');
+	text-align: center;
+	line-height: 1em;
+	background-size: cover;
+	padding-top: 50%;
+	padding-bottom: 50%;
+	text-shadow: 2px 2px 20px #000;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 #fundo {
 	width: 100%;
 	min-height: 100%;
 	background-image: url('../img/slide03.jpg');
 	text-align: center;
-	padding-top: 210px;
+	padding-top: 250px;
+	padding-bottom: 50px;
 	line-height: 1em;
 	background-size: cover;
+	margin-bottom: 5px;
 }
 
 #fundo h1, #fundo h2 {

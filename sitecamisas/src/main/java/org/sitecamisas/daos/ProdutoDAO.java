@@ -39,6 +39,10 @@ public class ProdutoDAO implements Serializable{
 	    return manager.createQuery("select p from Produto p where p.promocao = 1", Produto.class).getResultList();
 	}
 	
+	public List<Produto> genero(String genero){
+	    return manager.createQuery("select p from Produto p where p.genero = '" + genero + "' or p.genero = 'unissex'", Produto.class).getResultList();
+	}
+	
 	public Produto find(int id){
 		return manager.createQuery("select p from Produto p where p.id = :id", Produto.class).setParameter("id", id).getSingleResult();
 	}

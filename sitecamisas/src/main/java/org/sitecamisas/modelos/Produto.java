@@ -59,7 +59,12 @@ public class Produto implements Serializable {
 		this.preco_antigo = preco_antigo;
 	}*/
 	public void setPreco_antigo(String preco_antigo) throws ParseException {
-		this.preco_antigo = new BigDecimal(converte(preco_antigo));
+		if(!preco_antigo.equals("")) {
+			this.preco_antigo = new BigDecimal(converte(preco_antigo));
+		}else {
+			this.preco_antigo = null;
+		}
+		
 	}
 	public String getUrl_imagem() {
 		return url_imagem;
