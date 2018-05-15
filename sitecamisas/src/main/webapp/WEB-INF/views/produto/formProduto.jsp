@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 
 <c:url value="resources/img/" var="imagem" />
@@ -11,8 +12,8 @@
 	<div class="container">
 		<h1 class="titulo titulo_form">Cadastro de Produtos</h1>
 
-		<form action="/ecamisas/inserirproduto" method="POST"
-			enctype="multipart/form-data">
+		<form:form action="${s:mvcUrl('PC#cadastrarProduto').build() }" method="POST"
+			enctype="multipart/form-data" commandName="produto">
 
 			<input type="hidden" name="id" value="${produto.id }" />
 			<div class="form-group row">
@@ -20,6 +21,7 @@
 				<input class="form-control col-10" type="text" name="descricao"
 					placeholder="Digite uma descrição para o produto"
 					value="${produto.descricao }" required />
+					<form:errors path="descricao" />
 			</div>
 
 			<div class="form-group row">
@@ -37,19 +39,15 @@
 					class="form-control col-10" type="file" name="imagem"
 					value="${produto.url_imagem }" required />
 			</div>
-
-			<div class="form-group row">
-				<label class="col-2 col-form-label" for="preco_atual">Preço
-					atual:</label> <input class="form-control col-10" type="text"
-					name="preco_atual"
-					value="${produto.valorMoeda(produto.preco_atual)}" required />
-			</div>
-
-			<div class="form-group row">
-				<label class="col-2 col-form-label" for="preco_antigo">Preço
-					antigo:</label> <input class="form-control col-10" type="text"
-					name="preco_antigo" value="${produto.valorMoeda(produto.preco_antigo) }" />
-			</div>
+			
+			<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
+			    <div class="form-group row">
+			        <label class="col-2 col-form-label" for="precos[${status.index}].tipo">${tipoPreco.getDescricao()}</label>
+			        <input class="form-control col-2" type="text" name="precos[${status.index}].valor" 
+			        value="${produto.valorMoeda(produto.precos[status.index].valor) }" <c:if test="${status.index == 0}">required</c:if>>
+			        <input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}">
+			    </div>
+			</c:forEach>
 
 			<div class="form-group row">
 				<label class="col-2 col-form-label" for="estoque">Estoque:</label> <input
@@ -68,7 +66,7 @@
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				</div>
 			</div>
-		</form>
+		</form:form>
 		<label>${message}</label>
 	</div>
 

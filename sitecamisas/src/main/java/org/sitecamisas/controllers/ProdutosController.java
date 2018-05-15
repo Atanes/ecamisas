@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.sitecamisas.daos.ProdutoDAO;
 import org.sitecamisas.infra.FileSaver;
 import org.sitecamisas.modelos.Produto;
+import org.sitecamisas.modelos.TipoPreco;
 import org.sitecamisas.validation.ProdutoValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -39,6 +40,7 @@ public class ProdutosController {
     public ModelAndView cadProduto(Produto produto){
 		
 		ModelAndView mv = new ModelAndView("produto/formProduto");
+		mv.addObject("tipos", TipoPreco.values());
 		mv.addObject("produto", produto);
 		return mv;
 		
@@ -49,7 +51,6 @@ public class ProdutosController {
 	public ModelAndView cadastrarProduto(MultipartFile imagem, @Valid Produto produto, BindingResult result,
 			RedirectAttributes redirectAttributes) {
 
-		System.out.println(result.getFieldValue("promocao"));
 		if(result.getFieldValue("promocao").equals("true")) {
 			produto.setPromocao(true);
 		}else {
@@ -82,6 +83,7 @@ public class ProdutosController {
 	public ModelAndView listarProdutos(){
 	    List<Produto> produtos = produtoDao.listar();
 	    ModelAndView modelAndView = new ModelAndView("/produto/listaProdutos");
+	    modelAndView.addObject("tipoPrecos", TipoPreco.values());
 	    modelAndView.addObject("produtos", produtos);
 	    return modelAndView;
 	}
@@ -92,6 +94,7 @@ public class ProdutosController {
 		Produto produto = produtoDao.find(id);
 		
 		ModelAndView modelAndView = new ModelAndView("produto/formProduto");
+		modelAndView.addObject("tipos", TipoPreco.values());
 		modelAndView.addObject("produto", produto);
 		return modelAndView;
 

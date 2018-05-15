@@ -29,8 +29,11 @@
 					<th scope="col">Descrição</th>
 					<th scope="col">Gênero</th>
 					<th scope="col">Imagem</th>
-					<th scope="col">Preço Atual</th>
-					<th scope="col">Preço Antigo</th>
+					<c:forEach items="${tipoPrecos}" var="tipoPreco">
+						<th scope="col">
+						    ${tipoPreco.getDescricao()}
+					    </th>
+					</c:forEach>
 					<th scope="col" colspan="2">Ações</th>
 				</tr>
 			</thead>
@@ -44,17 +47,20 @@
 				<td>
 					<img class="img_produto_lista" src="${produto.url_imagem}"/>
 				</td>
-				<td>${produto.valorMoeda(produto.preco_atual)}</td>
-				<td>
-				<c:choose>
-					<c:when test="${not empty produto.preco_antigo}">
-						${produto.valorMoeda(produto.preco_antigo)}
-					</c:when>
-						<c:otherwise>
-	            			-
-	        			</c:otherwise>
-					</c:choose>
-				</td>
+				
+				<c:forEach items="${produto.precos}" var="preco">
+					<td>
+						<c:choose>
+							<c:when test="${preco.valor != null}">
+								${produto.valorMoeda(preco.valor)}
+							</c:when>
+							<c:otherwise>
+			            		-
+			        		</c:otherwise>
+						</c:choose>
+					</td>
+			     </c:forEach>
+				
 				<td>
 		         	<a href="<c:url value='/excluirproduto/'/>${produto.id}">
 		         		<img class="img-responsive img_acoes" src="${imagem}Delete_Icon.png" title="Excluir"/>

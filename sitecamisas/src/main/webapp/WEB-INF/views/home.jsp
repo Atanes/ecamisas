@@ -55,10 +55,16 @@
 					<img class="rounded img_produto" src="${produto.url_imagem}"
 						alt="${produto.genero }">
 					<h3 class="desc_produto">${produto.descricao }</h3>
-					<div class="preco_produto">${produto.preco_atual }</div>
-					<c:if test="${not empty produto.preco_antigo}">
-						<p class="preco_produto preco_antigo">${produto.preco_antigo }
-					</c:if>
+					
+					<c:forEach items="${produto.precos}" var="preco">
+						<c:if test="${preco.tipo == 'ATUAL'}">
+							<div class="preco_produto">${preco.valor }</div>
+						</c:if>
+						<c:if test="${preco.tipo == 'ANTIGO'}">
+							<p class="preco_produto preco_antigo">${preco.valor }
+						</c:if>
+			        </c:forEach>
+			
 				</div>
 
 			</c:forEach>

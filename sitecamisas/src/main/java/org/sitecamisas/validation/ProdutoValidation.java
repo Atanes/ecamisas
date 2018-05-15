@@ -13,11 +13,15 @@ public class ProdutoValidation implements Validator {
     }
 
     public void validate(Object target, Errors errors) {
-    	
-        ValidationUtils.rejectIfEmpty(errors, "preco_atual", "field.required" );
-        ValidationUtils.rejectIfEmpty(errors, "descricao", "field.required" );
-        ValidationUtils.rejectIfEmpty(errors, "url_imagem", "field.required" );
+    	ValidationUtils.rejectIfEmpty(errors, "descricao", "field.required");
+        //ValidationUtils.rejectIfEmpty(errors, "imagem", "field.required");
+        //ValidationUtils.rejectIfEmpty(errors, "ATUAL", "field.required");
         
+        /*
+         * Produto produto = (Produto) target;
+         * if(produto.getPaginas() <= 0){
+            errors.rejectValue("paginas", "field.required");
+        }*/
     }
 
 	
