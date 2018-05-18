@@ -14,17 +14,21 @@
 			<!-- percorre produtos exibindo cada produto na tela, sendo 4 por linha -->
 			<c:forEach var="produto" items="${produtos}" varStatus="contador">
 
-				<div class="col-md-3">
-					<img class="rounded img_produto" src="${produto.url_imagem}">
-					<h3 class="desc_produto">${produto.descricao }</h3>
-					<c:forEach items="${produto.precos}" var="preco">
-						<c:if test="${preco.tipo == 'ATUAL'}">
-							<div class="preco_produto">${preco.valor }</div>
-						</c:if>
-						<c:if test="${preco.tipo == 'ANTIGO'}">
-							<p class="preco_produto preco_antigo">${preco.valor }
-						</c:if>
-			        </c:forEach>
+				<div class="col-3">
+					<div class="figura">
+						<img src="${produto.url_imagem}" alt="${produto.genero }">
+						<p class="desc_produto">${produto.descricao }</p>
+						<p class="preco_produto">
+							<c:forEach items="${produto.precos}" var="preco">							
+								<c:if test="${preco.tipo == 'ATUAL'}">
+									${produto.valorMoeda(preco.valor) }
+								</c:if>
+								<c:if test="${preco.tipo == 'ANTIGO'}">
+									<span class="preco_antigo">${produto.valorMoeda(preco.valor) }</span>
+								</c:if>							
+							</c:forEach>
+						</p>
+					</div>
 				</div>
 
 			</c:forEach>

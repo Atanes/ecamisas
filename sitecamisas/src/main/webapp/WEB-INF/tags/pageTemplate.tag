@@ -10,7 +10,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>${titulo} - eCamisas</title>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!--<link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/estilo.css">
 <link rel="stylesheet" href="resources/css/navbar.css">
 

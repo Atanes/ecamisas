@@ -18,6 +18,7 @@ public class HomeController {
 	@RequestMapping("/")
     public ModelAndView index(){
         List<Produto> produtos = produtoDao.promocao();
+        
 	    ModelAndView modelAndView = new ModelAndView("home");
 	    modelAndView.addObject("produtos", produtos);
 	    return modelAndView;
@@ -30,16 +31,25 @@ public class HomeController {
 	
 	@RequestMapping("/feminino")
     public ModelAndView feminino(){
-        List<Produto> produtos = produtoDao.genero("feminino");
+		
+		List<Produto> produtos = produtoDao.genero("feminino");
 	    ModelAndView modelAndView = new ModelAndView("feminino");
+	    
+	    modelAndView.addObject("produtosP", produtoDao.promocao());
+	    
 	    modelAndView.addObject("produtos", produtos);
 	    return modelAndView;
     }
 	
 	@RequestMapping("/masculino")
     public ModelAndView masculino(){
+		List<Produto> produtosP = produtoDao.promocao();
+		
 		List<Produto> produtos = produtoDao.genero("masculino");
 	    ModelAndView modelAndView = new ModelAndView("masculino");
+	    
+	    modelAndView.addObject("produtosP", produtosP);
+	    
 	    modelAndView.addObject("produtos", produtos);
 	    return modelAndView;
     }

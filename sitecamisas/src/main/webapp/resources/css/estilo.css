@@ -144,16 +144,37 @@ body {
 	font-weight: bold;
 }
 
+div.figura {
+	max-width: 100%;
+    max-height: 100%;
+}
+div.figura p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+    text-align: center;
+}
+div.figura img{
+	width: 90%; 
+	height: auto; !important;
+	max-height: 220px;
+}
+
+.desc_produto {
+	font-size: 1.5vw;
+	text-align: center;
+	text-transform: uppercase;
+	color: rgb(107, 43, 43);
+	font-weight: bold;
+}
+
 .preco_produto {
-	display: inline;
-	font-size: 20px;
+	font-size: 1.5vw;
 	font-weight: bold;
 	color: rgb(119, 119, 119);
 }
 
 .preco_antigo {
-	font-size: 16px;
-	margin-left: 0.5em;
+	font-size: 1vw;
 	text-decoration: line-through;
 	font-weight: normal;
 }
@@ -292,4 +313,40 @@ footer a {
 
 .footer-bottom a {
 	color: rgb(107, 43, 43);
+}
+
+
+/* Alterações no estilo do CSS do Carousel para visualizar mais de uma imagem por vez */
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 100%; /* use this, or not */
+margin: auto;
+}
+
+.carousel-inner .item .active .left {
+  left: 10%;
+}
+
+.carousel-inner .item .active .right {
+  left: 33%;
+}
+
+.carousel-inner .next {
+  left: 33%
+}
+
+.carousel-inner .prev {
+  left: 10%
+}
+
+.carousel-control.left {
+  background-image: none;
+}
+
+.carousel-control.right {
+  background-image: none;
+}
+
+.carousel-inner .item {
+  background: red;
 }
