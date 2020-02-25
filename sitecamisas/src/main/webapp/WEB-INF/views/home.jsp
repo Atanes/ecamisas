@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:url value="resources/img/" var="imagem" />
+<c:url value="resources/img/asset0.png" var="imagem" />
 
 <tags:pageTemplate
 	titulo="Camisas estilizadas para todos os generos....">

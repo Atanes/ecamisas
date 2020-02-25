@@ -12,7 +12,7 @@
 	<div class="container">
 		<h1 class="titulo titulo_form">Cadastro de Produtos</h1>
 
-		<form:form action="${s:mvcUrl('PC#cadastrarProduto').build() }" method="POST"
+		<form:form action="${s:mvcUrl('PC#cadastrarProduto').build()}" method="POST"
 			enctype="multipart/form-data" commandName="produto">
 
 			<input type="hidden" name="id" value="${produto.id }" />
@@ -52,7 +52,7 @@
 			<div class="form-group row">
 				<label class="col-2 col-form-label" for="estoque">Estoque:</label> <input
 					class="form-control col-1" type="number" name="estoque"
-					value="${produto.estoque }" />
+					value="${produto.estoque}" />
 			</div>
 
 			<div class="checkbox">
