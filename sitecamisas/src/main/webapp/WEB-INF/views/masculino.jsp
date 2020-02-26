@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:url value="resources/img/" var="imagem" />
+<c:url value="resources/img/asset0.png" var="imagem" />
 
 <tags:pageTemplate titulo="Camisas masculinas">
 

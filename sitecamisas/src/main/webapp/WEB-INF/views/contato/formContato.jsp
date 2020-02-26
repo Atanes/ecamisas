@@ -3,8 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<c:url value="resources/img/" var="imagem" />
-
 <tags:pageTemplate titulo="Incluir e ou alterar um contato">
 		
 	<div class="container">
@@ -24,7 +22,7 @@
 			</div>
 			<div class="form-group row">
 				<label class="col-2 col-form-label" for="telefone">Telefone</label>
-				<input class="form-control col-4" type="text" pattern="\(\d{2}\)\d{5}-\d{4}" name="telefone"
+				<input class="form-control col-4" type="text" name="telefone"
 					placeholder="(DDD) + Número de telefone" value="${contato.telefone }"/> 
 					<label	class="col-2 col-form-label" for="assunto">Assunto</label>
 					<select	class="form-control col-4" name="assunto" required>
