@@ -13,7 +13,7 @@
 		<h1 class="titulo titulo_form">Cadastro de Produtos</h1>
 
 		<form:form action="${s:mvcUrl('PC#cadastrarProduto').build()}" method="POST"
-			enctype="multipart/form-data" commandName="produto">
+			enctype="multipart/form-data">
 
 			<input type="hidden" name="id" value="${produto.id }" />
 			<div class="form-group row">
