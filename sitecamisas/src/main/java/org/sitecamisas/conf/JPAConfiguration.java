@@ -26,7 +26,7 @@ public class JPAConfiguration {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUsername("UAtanes");
         dataSource.setPassword("PAtanes");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/ecommercefapen_bd");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/ecommercefapen_bd?useTimezone=true&serverTimezone=UTC");
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 
         factoryBean.setDataSource(dataSource);
